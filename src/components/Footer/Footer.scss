@@ -1,0 +1,24 @@
+.footer{
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+.icon{
+  color: white;
+}
+.FooterHome{
+  border-radius: 20px;
+  padding: 10px;
+  flex-direction: row;
+  background: #2E499C;
+}
+.iconFooterHome{
+  align-self: center;
+}
+.textFooterHome{
+  font-size: 20px;
+  color: white;
+  justify-content: center;
+  align-self: center;
+  padding-left: 10px;
+}

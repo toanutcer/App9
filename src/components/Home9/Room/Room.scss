@@ -1,0 +1,52 @@
+.Room {
+  margin-top: 20px;
+}
+.Name{
+  font-size: 16px;
+}
+.livingRoom{
+  border-radius: 16px;
+  margin-top: 15px;
+}
+.livingRoomUp{
+  flex-direction: row;
+  padding-top: 21px;
+
+}
+.lingvingRoomIcon{
+  padding-left: 18px;
+}
+.livingRoomName{
+  padding-left: 18px;
+  flex-direction: column;
+}
+.livingRoomNameUp{
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+
+}
+.livingRoomNameDown{
+  font-weight: 300;
+  font-size: 12px;
+  color: white;
+}
+.livingRoomDown{
+  padding-bottom: 0px;
+  margin-top: 35px;
+  border-radius: 30px;
+}
+.icon{
+  color: white;
+}
+.switch{
+  flex: 1;
+  padding-top: 20px;
+  justify-content: center;
+}
+.slider{
+  position: absolute;
+
+  bottom: 0;
+}
+

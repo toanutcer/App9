@@ -1,0 +1,20 @@
+.container{
+  flex: 1;
+  margin: 10px 30px 10px;
+  flex-direction: column;
+}
+.Header{
+  border-radius: 20px;
+  flex: 1;
+  justify-content: center;
+}
+.Main{
+  flex:8;
+  border-radius: 30px;
+}
+.Footer{
+  border-radius: 70px;
+  background: aquamarine;
+  flex: 1;
+  justify-content: center;
+}

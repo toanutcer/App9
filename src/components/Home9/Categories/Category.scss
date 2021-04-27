@@ -1,0 +1,18 @@
+.categories{
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-top: 30px;
+}
+.textCategory{
+  font-family: SVN-Gilroy;
+  font-style: normal;
+  color: #00C7CC;
+  font-weight: 300;
+
+  font-size: 18px;
+  line-height: 19px;
+}
+.textCategoryChoosen{
+  font-weight: bold;
+  font-size: 18px;
+}
