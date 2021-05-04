@@ -1,0 +1,44 @@
+.item1{
+  border-radius: 10px;
+  background-color: #fff;
+  padding: 20px 10px;
+}
+.header{
+  flex-direction: row;
+  color: red;
+  flex:2;
+  padding: 5px 5px 5px 0;
+}
+.headerContent1{
+  flex: 1;
+  justify-content: center;
+}
+
+.headerTextAddress{
+  font-size: 18px;
+  color: cornflowerblue;
+  font-weight: bold;
+}
+.headerTextWeather{
+  font-size: 16px;
+  color: cornflowerblue;
+}
+.headerContent2{
+  justify-content: center;
+}
+
+.content{
+  height: 50px;
+}
+.item2{
+  border-radius: 10px;
+  background-color: #fff;
+  padding: 5px 10px;
+  margin-top: 30px;
+}
+.images{
+  flex: 1;
+}
+.aaa{
+
+}

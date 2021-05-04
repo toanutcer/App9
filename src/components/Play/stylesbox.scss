@@ -1,0 +1,13 @@
+.container{
+  height: 50px;
+  flex-direction: row;
+  padding: 5px 5px 5px 0;
+  align-items: center;
+}
+.icon{
+  flex:1;
+}
+.text{
+  flex: 7;
+  font-size: 16px;
+}

@@ -1,0 +1,29 @@
+.container{
+  height: 50px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  background-color: #fff;
+  padding-left: 10px;
+}
+.header{
+  flex-direction: row;
+  color: red;
+  flex:2;
+}
+.headerContent1{
+  flex: 5;
+  justify-content: center;
+}
+
+.headerTextAddress{
+  font-size: 24px;
+  color: cornflowerblue;
+  font-weight: bold;
+}
+.headerTextWeather{
+  font-size: 18px;
+  color: cornflowerblue;
+}
+.main{
+  flex: 12;
+}

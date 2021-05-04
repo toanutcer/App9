@@ -2,22 +2,20 @@ import React, {useRef} from 'react';
 import styled from 'styled-components/native';
 import {Transition, Transitioning} from 'react-native-reanimated';
 
-import Images from './images';
+import Images from '../images';
 
 const bgColors = {
   home: '#ffe1c5',
-  bag: '#e5c1e5',
-  play: '#d7d8f8',
-  notification: '#bce3fa',
-  profile: '#3fabce',
+  logger: '#e5c1e5',
+  documents: '#d7d8f8',
+  menu: '#bce3fa',
 };
 
 const textColors = {
   home: '#c56b14',
-  bag: '#f37ff3',
-  play: '#4b458c',
-  notification: '#2d9cdb',
-  profile: '#8f8d7d',
+  logger: '#f37ff3',
+  documents: '#4b458c',
+  menu: '#2d9cdb',
 };
 
 const Container = styled.TouchableWithoutFeedback``;
