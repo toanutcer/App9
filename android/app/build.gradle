@@ -1,5 +1,5 @@
 apply plugin: "com.android.application"
-
+apply plugin: 'kotlin-android'
 import com.android.build.OutputFile
 
 /**
@@ -193,6 +193,7 @@ dependencies {
     debugImplementation("com.facebook.flipper:flipper:${FLIPPER_VERSION}") {
       exclude group:'com.facebook.fbjni'
     }
+    implementation project(':watermelondb')
     debugImplementation("com.facebook.flipper:flipper-network-plugin:${FLIPPER_VERSION}") {
         exclude group:'com.facebook.flipper'
         exclude group:'com.squareup.okhttp3', module:'okhttp'

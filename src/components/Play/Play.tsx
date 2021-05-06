@@ -1,10 +1,23 @@
 import React from 'react';
+import Footer from '../Footer/Footer';
 import {View, Text, TouchableOpacity} from 'react-native';
 import styles from './styles.scss';
 import {LinearTextGradient} from 'react-native-text-gradient';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Box from './Box';
-function Profile({navigation}) {
+
+// @ts-ignore
+function Play({navigation}) {
+  // @ts-ignore
+  const onClick = s => {
+    if (s === 'Home') {
+      navigation.navigate('Home');
+    } else if (s === 'Profile') {
+      navigation.navigate('Profile');
+    } else if (s === 'Play') {
+      navigation.navigate('Play');
+    }
+  };
   return (
     <View style={{padding: 15, backgroundColor: '#E5E5E5', flex: 1}}>
       <View style={styles.header}>
@@ -47,7 +60,8 @@ function Profile({navigation}) {
           <Box icon="home" content="Cảm biến và thiết bị hỗ trợ" />
         </TouchableOpacity>
       </View>
+      <Footer navigation={navigation} onClick={onClick} isActive="Play" />
     </View>
   );
 }
-export default Profile;
+export default Play;

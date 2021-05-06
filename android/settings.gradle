@@ -19,3 +19,6 @@ project(':sp-react-native-mqtt').projectDir = new File(rootProject.projectDir,  
 include ':sp-react-native-mqtt'
 project(':sp-react-native-mqtt').projectDir = new File(rootProject.projectDir,  '../node_modules/sp-react-native-mqtt/android')
 include ':app'
+include ':watermelondb'
+project(':watermelondb').projectDir =
+    new File(rootProject.projectDir, '../node_modules/@nozbe/watermelondb/native/android')

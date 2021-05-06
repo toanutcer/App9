@@ -7,15 +7,22 @@ import Area from './Area/Area';
 import Footer from '../Footer/Footer';
 import styless from './Categories/Category.scss';
 import 'react-native-gesture-handler';
-import {createStackNavigator} from '@react-navigation/stack';
 import Action from '../Home10/Action';
 import Users from './Users/Users';
 import _TextGradient from '../DungLienTungTuc/LinearTextGradient/LinearTextGradient';
 import {LinearTextGradient} from 'react-native-text-gradient';
-const Stack = createStackNavigator();
 
 function Home9({navigation}) {
   const [category, setCategory] = React.useState('1');
+  const onClick = s => {
+    if (s === 'Home') {
+      navigation.navigate('Home');
+    } else if (s === 'Profile') {
+      navigation.navigate('Profile');
+    } else if (s === 'Play') {
+      navigation.navigate('Play');
+    }
+  };
   return (
     <ImageBackground source={require('../../image/1999.jpg')} style={{flex: 1}}>
       <View style={styles.container}>
@@ -65,9 +72,7 @@ function Home9({navigation}) {
             </View>
           )}
         </View>
-        <View style={styles.Footer}>
-          <Footer />
-        </View>
+        <Footer navigation={navigation} onClick={onClick} isActive="Home" />
       </View>
     </ImageBackground>
   );

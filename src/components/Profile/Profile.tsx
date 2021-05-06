@@ -5,18 +5,25 @@ import Box from '../Play/Box';
 import styles from '../Profile/styles.scss';
 import {LinearTextGradient} from 'react-native-text-gradient';
 import Icon from 'react-native-vector-icons/Ionicons';
-import { IMAGES } from "../../../constants";
+import {IMAGES} from '../../../constants';
 
 // @ts-ignore
 function Profile({navigation}) {
+  // @ts-ignore
+  const onClick = s => {
+    if (s === 'Home') {
+      navigation.navigate('Home');
+    } else if (s === 'Profile') {
+      navigation.navigate('Profile');
+    } else if (s === 'Play') {
+      navigation.navigate('Play');
+    }
+  };
   return (
     <View style={{padding: 15, backgroundColor: '#E5E5E5', flex: 1}}>
       <View style={{flex: 12}}>
         <View style={styles.aaa}>
-          <Image
-            source={IMAGES.im_tokyo}
-            style={styles.images}
-          />
+          <Image source={IMAGES.im_tokyo} style={styles.images} />
           <View style={styles.headerContent1}>
             <Text style={styles.headerTextAddress}>54 Thụy Khê, Tây Hồ</Text>
             <Text style={styles.headerTextWeather}>10 phòng - 0 thiết bị</Text>
@@ -57,11 +64,11 @@ function Profile({navigation}) {
             </View>
           </TouchableOpacity>
           <TouchableOpacity onPress={() => {}} style={styles.content}>
-            <Box icon="keypad-outline" content="Cài đặt phòng" />
+            <Box icon="sunny-outline" content="Cài đặt phòng" />
           </TouchableOpacity>
           <View style={{borderColor: '#eceaea', borderWidth: 1}} />
           <TouchableOpacity onPress={() => {}} style={styles.content1}>
-            <Box icon="bluetooth-outline" content="Cài đặt HC" />
+            <Box icon="sunny-outline" content="Cài đặt HC" />
           </TouchableOpacity>
           <View style={{borderColor: '#eceaea', borderWidth: 1}} />
           <TouchableOpacity onPress={() => {}} style={styles.content}>
@@ -70,18 +77,19 @@ function Profile({navigation}) {
         </View>
         <View style={styles.item2}>
           <TouchableOpacity onPress={() => {}} style={styles.content}>
-            <Box icon="settings-outline" content="Cài đặt chung" />
+            <Box icon="sunny-outline" content="Cài đặt chung" />
           </TouchableOpacity>
         </View>
         <View style={styles.item2}>
           <TouchableOpacity onPress={() => {}} style={styles.content}>
-            <Box icon="document-text-outline" content="Trợ giúp và phản hồi" />
+            <Box icon="sunny-outline" content="Trợ giúp và phản hồi" />
           </TouchableOpacity>
           <TouchableOpacity onPress={() => {}} style={styles.content}>
-            <Box icon="download-outline" content="Cập nhật" />
+            <Box icon="sunny-outline" content="Cập nhật" />
           </TouchableOpacity>
         </View>
       </View>
+      <Footer navigation={navigation} onClick={onClick} isActive="Profile" />
     </View>
   );
 }

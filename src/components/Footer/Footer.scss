@@ -1,24 +1,26 @@
 .footer{
   flex-direction: row;
+  padding: 5px 20px;
+  background: white;
+  border-radius: 40px;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
+  flex: 1;
+  height: 80px;
+  width: 70%;
+  margin: auto;
 }
-.icon{
-  color: white;
-}
-.FooterHome{
-  border-radius: 20px;
-  padding: 10px;
+.footerHome{
   flex-direction: row;
-  background: #2E499C;
+  align-items: center;
+  border-radius: 20px;
+  padding: 5px 15px;
 }
-.iconFooterHome{
-  align-self: center;
-}
-.textFooterHome{
-  font-size: 20px;
+.text{
+  margin-left: 10px;
+  font-weight: bold;
   color: white;
-  justify-content: center;
-  align-self: center;
-  padding-left: 10px;
+}
+.hiddenText{
+  display: none;
 }

@@ -3,7 +3,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 import Home9 from './src/components/Home9/Home9';
 import Scrences from './src/components/ShortcutOfCanh/MainShortcutOfCanh';
 import QlPhong from './src/components/Phong/QLPhong';
-
+import TabNavigator from './TabNavigator';
 const Stack = createStackNavigator();
 
 function StackNavigator() {
@@ -11,8 +11,8 @@ function StackNavigator() {
     <Stack.Navigator>
       <Stack.Screen
         options={{headerShown: false}}
-        name="Home9"
-        component={Home9}
+        name="Home"
+        component={TabNavigator}
       />
       <Stack.Screen
         options={{headerShown: false}}
