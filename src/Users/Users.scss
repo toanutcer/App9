@@ -1,0 +1,19 @@
+.list{
+  flex-direction: row;
+}
+.listImages{
+  align-items: center;
+  flex: 5;
+  flex-direction: row;
+
+}
+.images{
+  margin-right: 5px;
+  height: 40px;
+  width: 40px;
+  border-radius: 20px;
+}
+.Switch{
+  flex: 1;
+  justify-content: center;
+}

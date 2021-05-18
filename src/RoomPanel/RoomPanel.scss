@@ -1,0 +1,33 @@
+.linearGradient{
+  margin-top: 15px;
+  border-radius: 12px;
+  height: 100px;
+  background: #E5E5E5;
+}
+.roomPanel{
+  height: 100px;
+  flex-direction: row;
+  padding: 20px;
+  align-items: center;
+  border-radius: 12px;
+}
+.panelIcon{
+  flex:1;
+}
+.panelTitle{
+  flex: 4;
+}
+.panelHeader{
+  font-size: 18px;
+  font-weight: bold;
+  height: 17px;
+  line-height: 17px;
+  color: white;
+}
+.panelContent{
+  font-size: 14px;
+  color: white;
+}
+.panelSwitch{
+  flex: 1;
+}

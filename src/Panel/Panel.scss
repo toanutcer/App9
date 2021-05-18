@@ -1,0 +1,25 @@
+.panel{
+  margin-bottom: 10px;
+  background: white;
+  border-radius: 15px;
+  padding: 5px 10px;
+}
+.panel01{
+  flex-direction: row;
+  height: 60px;
+}
+.panel02{
+  height: 30px;
+  justify-content: center;
+
+}
+.textPanel{
+  color: #2E499C;
+  font-weight: bold;
+}
+.item1{
+  flex: 1;
+}
+.item2{
+  flex: 1;
+}

@@ -1,0 +1,44 @@
+.container{
+  margin-top: 15px;
+  border-radius: 13px;
+  height: 100px;
+  background: #E5E5E5;
+}
+.zonePanelTrue{
+
+  background: white;
+  border-radius: 13px;
+  height: 100px;
+  flex-direction: row;
+  padding: 20px;
+  align-items: center;
+}
+.zonePanelFalse{
+  background: #E5E5E5;
+  border-radius: 13px;
+  height: 100px;
+  flex-direction: row;
+  padding: 20px;
+  align-items: center;
+}
+.zoneIcon{
+  flex:1;
+}
+.zoneTitle{
+  flex: 4;
+}
+.zoneHeader{
+  font-size: 18px;
+  font-weight: bold;
+  height: 17px;
+  line-height: 17px;
+
+}
+.zoneContent{
+  font-size: 14px;
+
+}
+.zoneSwitch{
+  flex: 1;
+
+}
