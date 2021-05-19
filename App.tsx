@@ -8,7 +8,7 @@ import Profile from './src/Profile/Profile';
 import Play from './src/Play/Play';
 import ScanHC from './src/Profile/ScanHC/ScanHC';
 import ScanDevice from './src/Profile/ScanDevice/ScanDevice';
-
+import ScanRoom from "./src/Profile/ScanRoom/ScanRoom";
 const HomeStack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 function HomeTabs() {
@@ -42,6 +42,11 @@ function HomeTabs() {
         name="ScanHC"
         component={ScanHC}
       />
+      <Tab.Screen
+        options={() => ({
+          tabBarVisible: false,
+        })}
+        name="ScanRoom" component={ScanRoom} />
       <Tab.Screen
         options={() => ({
           tabBarVisible: false,
