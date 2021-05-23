@@ -1,5 +1,6 @@
 # Phím tắt trong vs code nhanh
-**imr**	Import React
+**imr**	  Import React
+
 **imro**	Import React as Object
 **imrc**	Import React Component
 **imrpc**	Import React PureComponent
