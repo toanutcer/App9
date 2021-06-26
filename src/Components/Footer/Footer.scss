@@ -1,0 +1,25 @@
+.footer {
+  flex-direction: row;
+  padding: 5px 10px;
+  background: white;
+  border-radius: 40px;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1;
+  width: 60%;
+  margin: auto;
+}
+.footerHome {
+  flex-direction: row;
+  align-items: center;
+  border-radius: 20px;
+  padding: 5px 10px;
+}
+.text {
+  margin-left: 10px;
+  font-weight: bold;
+  color: white;
+}
+.hiddenText {
+  display: none;
+}

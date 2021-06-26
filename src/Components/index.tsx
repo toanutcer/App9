@@ -1,0 +1,9 @@
+export {default as ChonCanh} from './ChonCanh';
+export {default as Panel} from './Panel';
+export {default as Phongbep} from './Phongbep';
+export {default as Phongkhach} from './Phongkhach';
+export {default as RoomPanel} from './RoomPanel';
+export {default as SmartLight} from './SmartLight';
+export {default as Users} from './Users';
+export {default as ZonePanel} from './ZonePanel/ZonePanel';
+export {default as Footer} from './Footer/Footer';

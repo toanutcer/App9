@@ -1,35 +1,52 @@
 import {database} from './database';
+import {Q} from '@nozbe/watermelondb';
 
-export type Device = {
-  createdAt?: Date;
-  deviceID: string | number;
-  note: string | undefined;
-};
+const devicesCollection = database.get('devices');
+const roomsCollection = database.get('rooms');
 
-export const saveDevice = async (item: any) => {
-  await database.action(async () => {
+export const saveDevice = (item: any) => {
+  database.action(async () => {
     const value = JSON.parse(item);
     const value2 = JSON.parse(value.data.toString());
-    console.log('value2 = ', item);
-    if (value2.CMD === 'TYPE_DEVICE') {
-      console.log(value2.DATA.DEVICE_ID);
-      return database.collections.get('device').create(device => {
-        device.deviceID = value2.DATA.DEVICE_ID;
-        device.note = 'Đèn rạng đông';
-      });
-    }
+    devicesCollection.create((device: any) => {
+      device.device_id = value2.DATA.DEVICE_ID;
+      device.room_id = 'Đèn rạng đông';
+      device.name = 'Đèn rạng đông';
+      device.note = 'Đèn rạng đông';
+    });
   });
 };
 
 export const getDevice = async () => {
-  const postsCollection = database.get('device');
-  const allPosts = await postsCollection.query().fetch();
-  console.log('GetDevice la : ', allPosts);
-  return allPosts;
+  return await devicesCollection.query().fetch();
 };
-export const deleteDevice = async () => {
+export const deleteAllDevice = async () => {
   await database.action(async () => {
     database.unsafeResetDatabase();
   });
   console.log('Đã xóa');
+};
+export const deleteDevice = async (id: any) => {
+  await database.action(async () => {
+    await devicesCollection.query(Q.where('device_id', id)).markAllAsDeleted();
+    console.log('Xóa thành công khỏi db');
+  });
+};
+export const deleteRoom = async (name: any) => {
+  await database.action(async () => {
+    await roomsCollection.query(Q.where('name', name)).markAllAsDeleted();
+    console.log('Xóa thành công khỏi db');
+  });
+};
+export const crateRoom = async (id: any, name: any) => {
+  database.action(async () => {
+    roomsCollection.create((room: any) => {
+      console.log(name);
+      room.device_id = id;
+      room.name = name;
+    });
+  });
+};
+export const getRoom = async () => {
+  return await roomsCollection.query().fetch();
 };
