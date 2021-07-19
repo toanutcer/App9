@@ -21,6 +21,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import Icon2 from 'react-native-vector-icons/Ionicons';
 import RNLocation from 'react-native-location';
 import {IMAGES} from '../../Themes';
+import i18next from 'i18next';
 function Home({navigation, route}: StackScreenProps<any>) {
   useEffect(() => {
     async function getAddress() {
@@ -131,8 +132,6 @@ function Home({navigation, route}: StackScreenProps<any>) {
       });
     }
   });
-  console.log('Latitude = ', lat);
-  console.log('Longtitude = ', long);
   let key = '7bbd1b7312e4bf1997c2139c3ec50004';
   const url = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${key}`;
   const [forecast, setForecast] = useGlobal<any>('forecast');
@@ -149,7 +148,6 @@ function Home({navigation, route}: StackScreenProps<any>) {
     };
     loadForecast();
   }, [lat, long, setForecast, url]);
-  console.log('Forecase = ', forecast);
   return (
     <ImageBackground source={IMAGES.imageBG} style={styles.container}>
       <View style={styles.header}>
@@ -160,7 +158,7 @@ function Home({navigation, route}: StackScreenProps<any>) {
             start={{x: 0, y: 0}}
             end={{x: 1, y: 0}}>
             <Text style={styles.headerTextAddress}>
-              {forecast ? forecast.name : 'Địa chỉ'}
+              {forecast ? forecast.name : `${i18next.t('Địa chỉ')}`}
               <Icon name="angle-down" size={20} />
             </Text>
           </LinearTextGradient>
@@ -171,13 +169,13 @@ function Home({navigation, route}: StackScreenProps<any>) {
             end={{x: 1, y: 0}}>
             <Text style={styles.headerTextWeather}>
               {forecast
-                ? forecast.main.temp -
-                  273.15 +
+                ? (forecast.main.temp -
+                  273.15).toFixed(1) +
                   '°C, ' +
                   'Độ ẩm ' +
                   forecast.main.humidity +
                   '%'
-                : 'Thời tiết'}
+                : `${i18next.t('Thời tiết')}`}
             </Text>
           </LinearTextGradient>
         </View>

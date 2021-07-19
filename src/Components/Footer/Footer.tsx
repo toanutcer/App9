@@ -6,6 +6,7 @@ import Icon1 from 'react-native-vector-icons/Feather';
 import styles from './Footer.scss';
 import Icon2 from 'react-native-vector-icons/Ionicons';
 import {LinearTextGradient} from 'react-native-text-gradient';
+import i18next from 'i18next';
 
 // @ts-ignore
 function Footer({navigation, isActive, onClick}: any) {
@@ -20,7 +21,7 @@ function Footer({navigation, isActive, onClick}: any) {
             style={isActive === 'Home' ? styles.footerHome : ''}>
             <Icon name="home" size={30} color="white" />
             <Text style={{marginLeft: 5, fontWeight: 'bold', color: 'white'}}>
-              Home
+              {i18next.t('Home')}
             </Text>
           </LinearGradient>
         </TouchableOpacity>
@@ -44,7 +45,7 @@ function Footer({navigation, isActive, onClick}: any) {
             style={isActive === 'Play' ? styles.footerHome : ''}>
             <Icon name="play-circle" size={30} color="white" />
             <Text style={{marginLeft: 10, fontWeight: 'bold', color: 'white'}}>
-              Auto
+              {i18next.t('Auto')}
             </Text>
           </LinearGradient>
         </TouchableOpacity>
@@ -68,7 +69,7 @@ function Footer({navigation, isActive, onClick}: any) {
             style={isActive === 'Profile' ? styles.footerHome : ''}>
             <Icon name="user" size={30} color="white" />
             <Text style={{marginLeft: 10, fontWeight: 'bold', color: 'white'}}>
-              Profile
+              {i18next.t('Profile')}
             </Text>
           </LinearGradient>
         </TouchableOpacity>

@@ -1,7 +1,7 @@
 import i18next from 'i18next';
 import {initReactI18next} from 'react-i18next';
-import vi from 'i18n/vi';
-import en from 'i18n/en';
+import vi from './vi';
+import en from './en';
 
 const resources = {
   vi,

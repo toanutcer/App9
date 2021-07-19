@@ -8,6 +8,7 @@ import Box from './Box';
 import {useGlobal} from 'reactn';
 import {StackScreenProps} from '@react-navigation/stack';
 import {IMAGES} from '../../Themes';
+import i18next from 'i18next';
 
 function Profile({navigation}: StackScreenProps<any>) {
   const [forecast, setForecast] = useGlobal<any>('forecast');
@@ -20,6 +21,21 @@ function Profile({navigation}: StackScreenProps<any>) {
       navigation.navigate('Play');
     }
   };
+  const handleGetAlarm = () => {
+    navigation.navigate('AlarmScreen',{name: "Báo thức"});
+  };
+  const handleGetBedTime = () => {
+    navigation.navigate('BedTimeScreen',{name:"Giờ đi ngủ"});
+  };
+  const handleGetTimer = () => {
+    navigation.navigate('TimerScreen');
+  };
+  const handleGetOther = () => {
+    navigation.navigate('OtherScreen',{name: "Khác"});
+  };
+  const handleGetSensor = () => {
+    navigation.navigate('SensorScreen', {name: "Cảm biến"});
+  };
   return (
     <ImageBackground source={IMAGES.imageBG} style={{flex: 1}}>
       <View style={{padding: 15, flex: 1}}>
@@ -31,7 +47,7 @@ function Profile({navigation}: StackScreenProps<any>) {
               start={{x: 0, y: 0}}
               end={{x: 1, y: 0}}>
               <Text style={styles.headerTextAddress}>
-                {forecast ? forecast.name : 'Địa chỉ'}
+                {forecast ? forecast.name : `${i18next.t('Địa chỉ')}`}
                 <Icon name="angle-down" size={20} />
               </Text>
             </LinearTextGradient>
@@ -42,8 +58,7 @@ function Profile({navigation}: StackScreenProps<any>) {
               end={{x: 1, y: 0}}>
               <Text style={styles.headerTextWeather}>
                 {forecast
-                  ? forecast.main.temp -
-                    273.15 +
+                  ? (forecast.main.temp - 273.15).toFixed(1) +
                     '°C, ' +
                     'Độ ẩm ' +
                     forecast.main.humidity +
@@ -54,22 +69,27 @@ function Profile({navigation}: StackScreenProps<any>) {
           </View>
         </View>
         <View style={styles.main}>
-          <Text style={{marginBottom: 30}}>Routine</Text>
-          <TouchableOpacity onPress={() => {}} style={styles.container}>
-            <Box icon="sunny-outline" content="Báo thức" />
+          <Text style={{marginBottom: 30}}>{i18next.t('Routine')}</Text>
+          <TouchableOpacity onPress={handleGetAlarm} style={styles.container}>
+            <Box icon="sunny-outline" content={i18next.t('Báo thức')} />
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => {}} style={styles.container}>
-            <Box icon="time-outline" content="Giờ đi ngủ" />
+          <TouchableOpacity onPress={handleGetBedTime} style={styles.container}>
+            <Box icon="time-outline" content={i18next.t('Giờ đi ngủ')} />
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => {}} style={styles.container}>
-            <Box icon="alarm-outline" content="Hẹn giờ" />
+          <TouchableOpacity onPress={handleGetTimer} style={styles.container}>
+            <Box icon="alarm-outline" content={i18next.t('Hẹn giờ')} />
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => {}} style={styles.container}>
-            <Box icon="ios-add-circle-outline" content="Khác" />
+          <TouchableOpacity onPress={handleGetOther} style={styles.container}>
+            <Box icon="ios-add-circle-outline" content={i18next.t('Khác')} />
           </TouchableOpacity>
-          <Text style={{marginTop: 20, marginBottom: 30}}>Automation</Text>
-          <TouchableOpacity onPress={() => {}} style={styles.container}>
-            <Box icon="home" content="Cảm biến và thiết bị hỗ trợ" />
+          <Text style={{marginTop: 20, marginBottom: 30}}>
+            {i18next.t('Automation')}
+          </Text>
+          <TouchableOpacity onPress={handleGetSensor} style={styles.container}>
+            <Box
+              icon="home"
+              content={i18next.t('Cảm biến và thiết bị hỗ trợ')}
+            />
           </TouchableOpacity>
         </View>
         <Footer navigation={navigation} onClick={onClick} isActive="Play" />

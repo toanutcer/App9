@@ -15,5 +15,11 @@ export default {
     'Last name': 'Tên',
     Button: 'Xác nhận',
     Reset: 'Đặt lại',
+    'setting' : 'Cài đặt',
+    'Địa chỉ' : 'Địa chỉ',
+    'Thời tiết' : 'Thời tiết',
+    'Profile' : 'Profile',
+    'Auto' : 'Auto',
+    'Home' : 'Home',
   },
 };

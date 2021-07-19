@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {Text, TextInput, TouchableOpacity, View} from 'react-native';
 import {Picker} from '@react-native-picker/picker';
-import {crateRoom, getDevice} from '../../../../../model/helpers';
+import {crateRoom, getDevice} from '../../../../model/helpers';
 import {StackScreenProps} from '@react-navigation/stack';
 
 export default function CreateRoom({navigation}: StackScreenProps<any>) {

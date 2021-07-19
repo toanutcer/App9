@@ -13,6 +13,7 @@ import {LinearTextGradient} from 'react-native-text-gradient';
 import Icon from 'react-native-vector-icons/Ionicons';
 import {StackScreenProps} from '@react-navigation/stack';
 import {IMAGES} from '../../Themes';
+import i18next from 'i18next';
 
 function Profile({navigation}: StackScreenProps<any>) {
   const onClick = (s: string) => {
@@ -23,6 +24,24 @@ function Profile({navigation}: StackScreenProps<any>) {
     } else if (s === 'Play') {
       navigation.navigate('Play');
     }
+  };
+  const handleSettingRoom = () => {
+    navigation.navigate('ScanRoom');
+  };
+  const handleSettingHC = () => {
+    navigation.navigate('ScanHC');
+  };
+  const handleSettingDevice = () => {
+    navigation.navigate('ScanDevice');
+  };
+  const handleHelpAndFeedback = () => {
+    navigation.navigate('HelpAndFeedbackScreen');
+  };
+  const handleUpdate = () => {
+    navigation.navigate('UpdateScreen');
+  };
+  const handleSetting = () => {
+    navigation.navigate('SettingScreen');
   };
   return (
     <ImageBackground source={IMAGES.imageBG} style={{flex: 1}}>
@@ -84,41 +103,35 @@ function Profile({navigation}: StackScreenProps<any>) {
               </View>
             </TouchableOpacity>
             <TouchableOpacity
-              onPress={() => {
-                navigation.navigate('ScanRoom');
-              }}
+              onPress={handleSettingRoom}
               style={styles.content}>
-              <Box icon="sunny-outline" content="Cài đặt phòng" />
+              <Box icon="sunny-outline" content={i18next.t("Cài đặt phòng")} />
+            </TouchableOpacity>
+            <View style={{borderColor: '#eceaea', borderWidth: 1}} />
+            <TouchableOpacity onPress={handleSettingHC} style={styles.content1}>
+              <Box icon="sunny-outline" content={i18next.t("Cài đặt HC")} />
             </TouchableOpacity>
             <View style={{borderColor: '#eceaea', borderWidth: 1}} />
             <TouchableOpacity
-              onPress={() => {
-                navigation.navigate('ScanHC');
-              }}
-              style={styles.content1}>
-              <Box icon="sunny-outline" content="Cài đặt HC" />
-            </TouchableOpacity>
-            <View style={{borderColor: '#eceaea', borderWidth: 1}} />
-            <TouchableOpacity
-              onPress={() => {
-                navigation.navigate('ScanDevice');
-              }}
+              onPress={handleSettingDevice}
               style={styles.content}>
-              <Box icon="sunny-outline" content="Cài đặt thiết bị" />
+              <Box icon="sunny-outline" content={i18next.t("Cài đặt thiết bị")} />
             </TouchableOpacity>
           </View>
           <View style={styles.item2}>
-            <TouchableOpacity onPress={() => {}} style={styles.content}>
-              <Box icon="sunny-outline" content="Cài đặt chung" />
+            <TouchableOpacity onPress={handleSetting} style={styles.content}>
+              <Box icon="sunny-outline" content={i18next.t("Cài đặt chung")} />
             </TouchableOpacity>
           </View>
           <View style={styles.item2}>
-            <TouchableOpacity onPress={() => {}} style={styles.content}>
-              <Box icon="sunny-outline" content="Trợ giúp và phản hồi" />
+            <TouchableOpacity
+              onPress={handleHelpAndFeedback}
+              style={styles.content}>
+              <Box icon="sunny-outline" content={i18next.t("Trợ giúp và phản hồi")} />
             </TouchableOpacity>
             <View style={{borderColor: '#eceaea', borderWidth: 1}} />
-            <TouchableOpacity onPress={() => {}} style={styles.content}>
-              <Box icon="sunny-outline" content="Cập nhật" />
+            <TouchableOpacity onPress={handleUpdate} style={styles.content}>
+              <Box icon="sunny-outline" content={i18next.t("Cập nhật")} />
             </TouchableOpacity>
           </View>
         </View>
